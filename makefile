@@ -23,10 +23,11 @@ help:
 ## setup: Create a local venv and install the project with pip install -e .
 setup:
 	@echo "Creating virtual environment..."
+	@if [ -d "$(VENV_DIR)" ]; then rm -rf "$(VENV_DIR)"; fi
 	@$(PYTHON) -m venv $(VENV_DIR)
 	@echo "Installing project dependencies..."
-	@$(PIP) install --upgrade pip
-	@$(PIP) install -e .
+	@$(PIP) install --upgrade --no-cache-dir pip setuptools wheel
+	@$(PIP) install --no-cache-dir -e .
 	@echo "Environment ready. Activate it with: source $(VENV_DIR)/bin/activate"
 
 ## run-inference_test_donut: Infer the model and test with what is defined in the inference script

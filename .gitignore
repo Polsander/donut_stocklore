@@ -4,4 +4,7 @@
 /data/train/images
 /data/validate/images
 
-/venv
+/.venv
+.venv
+*.egg
+*.egg-info
