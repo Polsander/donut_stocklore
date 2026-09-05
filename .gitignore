@@ -1,0 +1,7 @@
+
+/data/inference/*
+/data/test/images
+/data/train/images
+/data/validate/images
+
+/venv
